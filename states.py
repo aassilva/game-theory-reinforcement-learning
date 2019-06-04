@@ -71,14 +71,14 @@ state_list.append(estado_27)
 acao_1 = "comandar"
 acao_2 = "cooperar"
 acao_3 = "conspirar"
-
+#https://stackoverflow.com/questions/40186361/pandas-dataframe-with-tuple-of-strings-as-index
 d2 = [(0,0,0)]
-dfObj = pd.DataFrame(d2, columns=[acao_1,acao_2,acao_3], index=state_list)
+dfObj = pd.DataFrame(d2, columns=[acao_1,acao_2,acao_3], index=pd.MultiIndex.from_tuples(state_list))
 indexNamesArr = dfObj.index.values
+a = indexNamesArr[0]
+print(dfObj.loc[a, :])
 
-print(dfObj.loc["(comandar, comandar, comandar)", :])
-
-#print(indexNamesArr[0])
+print(a)
 
 
 
