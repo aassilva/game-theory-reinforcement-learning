@@ -75,10 +75,10 @@ acao_3 = "conspirar"
 d2 = [(0,0,0)]
 dfObj = pd.DataFrame(d2, columns=[acao_1,acao_2,acao_3], index=pd.MultiIndex.from_tuples(state_list))
 indexNamesArr = dfObj.index.values
-a = indexNamesArr[0]
-print(dfObj.loc[a, :])
 
-print(a)
+a = indexNamesArr[0]
+
+print(dfObj.loc[a, :])
 
 
 
