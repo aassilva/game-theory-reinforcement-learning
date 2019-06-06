@@ -1,59 +1,47 @@
 import numpy as np
 
-#Third Commanding
-payoff_matrix_01 = np.empty([3, 3], dtype=object)
 
-#Command
-payoff_matrix_01[0][0] = [3, 3, 3] # Command
-payoff_matrix_01[0][1] = [3, 1, 3] # Coop
-payoff_matrix_01[0][2] = [2, 6, 2] # Conspire
+class Payoff:
 
-#Coop
-payoff_matrix_01[1][0] = [1, 3, 3] # Command
-payoff_matrix_01[1][1] = [1, 1, 10] # Coop
-payoff_matrix_01[1][2] = [2, 6, 2] # Conspire
+    def __init__(self):
+        self.payoffs = None
+        self.init_payoff_matrix()
 
-#Conspire
-payoff_matrix_01[2][0] = [6, 2, 2] # Command
-payoff_matrix_01[2][1] = [6, 2, 2] # Coop
-payoff_matrix_01[2][2] = [3, 3, 2] # Conspire
+    def init_payoff_matrix(self):
+        self.payoffs = dict()
 
-# --------------------------------------------- #
+        self.payoffs[(0, 0, 0)] = 3
+        self.payoffs[(1, 0, 0)] = 1
+        self.payoffs[(2, 0, 0)] = 6
 
-# Third Cooperating
-payoff_matrix_02 = np.empty([3, 3], dtype=object)
+        self.payoffs[(0, 1, 0)] = 3
+        self.payoffs[(1, 1, 0)] = 1
+        self.payoffs[(2, 1, 0)] = 6
 
-# Command
-payoff_matrix_02[0][0] = [3, 3, 1] # Command
-payoff_matrix_02[0][1] = [10, 1, 1] # Coop
-payoff_matrix_02[0][2] = [2, 6, 2] # Conspire
+        self.payoffs[(0, 2, 0)] = 2
+        self.payoffs[(1, 2, 0)] = 2
+        self.payoffs[(2, 2, 0)] = 3
 
-# Coop
-payoff_matrix_02[1][0] = [1, 10, 1] # Command
-payoff_matrix_02[1][1] = [7, 7, 7] # Coop
-payoff_matrix_02[1][2] = [2, 6, 2] # Conspire
+        self.payoffs[(0, 0, 1)] = 3
+        self.payoffs[(1, 0, 1)] = 1
+        self.payoffs[(2, 0, 1)] = 6
 
-# Conspire
-payoff_matrix_02[2][0] = [6, 2, 2] # Command
-payoff_matrix_02[2][1] = [6, 2, 2] # Coop
-payoff_matrix_02[2][2] = [3, 3, 2] # Conspire
+        self.payoffs[(0, 0, 2)] = 1
+        self.payoffs[(1, 0, 2)] = 2
+        self.payoffs[(2, 0, 2)] = 3
 
-# --------------------------------------------- #
+        self.payoffs[(0, 1, 1)] = 10
+        self.payoffs[(1, 1, 1)] = 7
+        self.payoffs[(2, 1, 1)] = 6
 
-# Third Conspiring
-payoff_matrix_03 = np.empty([3, 3], dtype=object)
+        self.payoffs[(0, 1, 2)] = 1
+        self.payoffs[(1, 1, 2)] = 2
+        self.payoffs[(2, 1, 2)] = 3
 
-# Command
-payoff_matrix_03[0][0] = [2, 2, 6] # Command
-payoff_matrix_03[0][1] = [2, 2, 6] # Coop
-payoff_matrix_03[0][2] = [2, 3, 3] # Conspire
+        self.payoffs[(0, 2, 1)] = 1
+        self.payoffs[(1, 2, 1)] = 2
+        self.payoffs[(2, 2, 1)] = 3
 
-# Coop
-payoff_matrix_03[1][0] = [2, 2, 6] # Command
-payoff_matrix_03[1][1] = [2, 2, 6] # Coop
-payoff_matrix_03[1][2] = [2, 3, 3] # Conspire
-
-# Conspire
-payoff_matrix_03[2][0] = [3, 2, 3] # Command
-payoff_matrix_03[2][1] = [3, 2, 3] # Coop
-payoff_matrix_03[2][2] = [3, 3, 3] # Conspire
+        self.payoffs[(0, 2, 2)] = 1
+        self.payoffs[(1, 2, 2)] = 2
+        self.payoffs[(2, 2, 2)] = 3
