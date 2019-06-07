@@ -1,4 +1,3 @@
-import numpy as np
 import pandas as pd
 
 
@@ -87,12 +86,3 @@ class ArtificialIntelligence:
         # https://stackoverflow.com/questions/40186361/pandas-dataframe-with-tuple-of-strings-as-index
         d2 = [(0, 0, 0)]
         self.transition_matrix = pd.DataFrame(d2, columns=[acao_1, acao_2, acao_3], index=pd.MultiIndex.from_tuples(state_list))
-
-# indexNamesArr = dfObj.index.values
-
-# a = indexNamesArr[0]
-
-# print(dfObj.loc[a, :])
-
-
-

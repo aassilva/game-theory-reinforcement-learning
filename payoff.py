@@ -1,6 +1,3 @@
-import numpy as np
-
-
 class Payoff:
 
     def __init__(self):

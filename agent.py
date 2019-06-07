@@ -1,5 +1,6 @@
-import random
 from artificial_intelligence import ArtificialIntelligence
+import numpy as np
+import sys
 
 
 class Agent:
@@ -7,9 +8,10 @@ class Agent:
     def __init__(self, id):
         print("...: Agent %d ready to rock :..." % id)
         self.id = id
-        self.strategy = random.randint(0, 2)
+        self.strategy = 0  # random.randint(0, 2)
         self.intelligence = ArtificialIntelligence()
-        self.epsilon = 0.1
+        self.epsilon = 0.3
+
         self.r = 0
         self.discount_rate = 0.9
 
@@ -19,9 +21,13 @@ class Agent:
     # https://moodle.inf.ufrgs.br/pluginfile.php/133906/mod_resource/content/1/marl.pdf
     def play(self):
         possibilities = self.intelligence.transition_matrix.loc[self.state, :]
+        choice = np.random.random()
 
+        if choice > self.epsilon:
+            self.strategy = possibilities.idxmax()
+        else:
+            self.strategy = np.random.randint(0, 3)
 
-        self.strategy = 1
         return self.strategy
 
     def set_reward(self, r):
