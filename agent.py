@@ -1,6 +1,6 @@
-from artificial_intelligence import ArtificialIntelligence
 import numpy as np
-import sys
+
+from artificial_intelligence import ArtificialIntelligence
 
 
 class Agent:
